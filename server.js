@@ -5,12 +5,58 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var articleOne = {
+    title: "article-one",
+    heading: "This id article one",
+    content: 
+            ` <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p1>
+              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p1>
+              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p1>
+              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p1>`
+};
+
+function createTemoplate (data) {
+    var title = data.title;
+    var heading = data.heading;
+    var content = data.conntent;
+    var htmlTemplate = `<html>
+  <head>
+    <title>${title}</title> 
+  </head>
+  <body>
+      <div class="contaier">
+          <div>
+              <a href="/">Home</a>
+              <hr>
+              <h1>${heading}</h1>
+          </div>
+          
+          <div>
+              ${content}
+          </div>
+      </div>
+  </body>
+  
+</html>`;
+
+return htmlTemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function(req, res){
