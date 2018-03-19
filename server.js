@@ -24,7 +24,7 @@ var articleOne = {
               </p1>`
 };
 
-function createTemoplate (data) {
+function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
     var content = data.conntent;
