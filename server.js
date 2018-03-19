@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 
 var articleOne = {
     title: "article-one",
-    heading: "This id article one",
+    heading: "This is article one",
     content: 
             ` <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
                   This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
@@ -27,7 +27,7 @@ var articleOne = {
 function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
-    var content = data.conntent;
+    var content = data.content;
     var htmlTemplate = `<html>
   <head>
     <title>${title}</title> 
