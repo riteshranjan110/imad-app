@@ -32,7 +32,7 @@ function createTemplate (data) {
     <title>${title}</title> 
   </head>
   <body>
-      <div class="contaier">
+      <div class="container">
           <div>
               <a href="/">Home</a>
               <hr>
