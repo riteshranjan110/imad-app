@@ -23,10 +23,7 @@ body {
 .container {
     width: 800px;
     margin: 0 180px;
-    padding:20px;
     color: grey;
-    border: 5px solid black;
-    border-radius: 20px;
     background-color: green;
 }
 
