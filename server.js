@@ -9,18 +9,18 @@ var articleOne = {
     title: "article-one",
     heading: "This is article one",
     content: 
-            ` <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+            ` <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
                   This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p1>
-              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p>
+              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
                   This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p1>
-              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p>
+              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
                   This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p1>
-              <p1>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+              </p>
+              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
                   This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p1>`
+              </p>`
 };
 
 function createTemplate (data) {
