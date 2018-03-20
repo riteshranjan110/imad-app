@@ -5,22 +5,60 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: "article-one",
-    heading: "This is article one",
-    content: 
-            ` <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p>
-              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p>
-              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p>
-              <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-              </p>`
+var articles = {
+    'article-one': {
+        title: "article-one",
+        heading: "This is article one",
+        content: 
+                ` <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  </p>
+                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  </p>
+                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  </p>
+                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
+                  </p>`
+    },
+    'article-two': {
+        title: "article-two",
+        heading: "This is article two",
+        content: 
+                ` <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                  </p>
+                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                  </p>
+                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                  </p>
+                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
+                  </p>
+                  `
+    },
+    'article-three': {
+        title: "article-three",
+        heading: "This is article three",
+        content: 
+                ` <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                  </p>
+                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                  </p>
+                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                  </p>
+                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
+                  </p>
+                  `
+    }
 };
 
 function createTemplate (data) {
@@ -56,8 +94,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req, res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req, res){
+    //articleName == article-one
+    //article[articleName] == {} content of article one
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function(req, res){
