@@ -18,6 +18,6 @@ button.onclick = function () {
    
    //send the request
    request.open('GET','riteshk981.imad.hasura-app.io/counter',true);
-   request.send(null);
+   request.send();
 };
 
