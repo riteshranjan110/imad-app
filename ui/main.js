@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 var message = document.getElementById("message");
-message.innerHTML = 'Executed Successfully';
+
 
 
 var img = document.getElementById('madi');
@@ -13,5 +13,7 @@ var moveRight =  function () {
 
 
 img.onclick = function () {
+    message.innerHTML = 'Executed Successfully';
     var interval = setInterval(moveRight,100);
+    
 };
