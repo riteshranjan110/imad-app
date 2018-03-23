@@ -5,7 +5,7 @@ var button = document.getElementById("change-text");
 button.innerHTML = 'success';
 
 button.onClick = function () {
-     message.innerHTML = 'Executed Successfully';
+     button.innerHTML = 'Executed Successfully';
 };
 
 
