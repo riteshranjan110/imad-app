@@ -4,7 +4,7 @@ var message = document.getElementById("message");
 var button = document.getElementById('button1');
 
 button.onClick = function (){
-    button.style.marginLeft = '100px';
+    button.innerHTML = 'Executed Successfully';
 };
 
 var img = document.getElementById('madi');
