@@ -2,9 +2,11 @@ console.log('Loaded!');
 
 var message = document.getElementById("message");
 var button = document.getElementById("button1");
-button.onClick = function () {
+button.onClick = changeText();
+
+function changeText () {
     message.innerHTML = "Hi I am Ritesh";
-};
+}
 
 var img = document.getElementById('madi');
 var marginLeft = 0;
