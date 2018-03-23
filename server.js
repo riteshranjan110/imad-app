@@ -5,90 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles = {
-    'article-one': {
-        title: "article-one",
-        heading: "This is article one",
-        content: 
-                ` <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  </p>
-                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  </p>
-                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  </p>
-                  <p>This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                      This is paragraph for article one.This is paragraph for article one.This is paragraph for article one.
-                  </p>`
-    },
-    'article-two': {
-        title: "article-two",
-        heading: "This is article two",
-        content: 
-                ` <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                  </p>
-                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                  </p>
-                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                  </p>
-                  <p>This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                     This is paragraph for article two.This is paragraph for article two.This is paragraph for article two.
-                  </p>
-                  `
-    },
-    'article-three': {
-        title: "article-three",
-        heading: "This is article three",
-        content: 
-                ` <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                  </p>
-                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                  </p>
-                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                  </p>
-                  <p>This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                     This is paragraph for article three.This is paragraph for article three.This is paragraph for article three.
-                  </p>
-                  `
-    }
-};
-
-function createTemplate (data) {
-    var title = data.title;
-    var heading = data.heading;
-    var content = data.content;
-    var htmlTemplate = `<html>
-  <head>
-    <title>${title}</title> 
-    <link href="/ui/style.css" rel="stylesheet" />
-  </head>
-  <body>
-      <div class="container">
-          <div>
-              <a href="/">Home</a>
-              <hr>
-              <h1>${heading}</h1>
-          </div>
-          
-          <div>
-              ${content}
-          </div>
-      </div>
-  </body>
-  
-</html>`;
-
-return htmlTemplate;
-}
-
 
 var counter = 0;
 app.get('/counter',function(req,res){
@@ -101,12 +17,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articleName', function(req, res){
-    //articleName == article-one
-    //article[articleName] == {} content of article one
-    var articleName = req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
-});
+
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
