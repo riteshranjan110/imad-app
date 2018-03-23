@@ -2,7 +2,7 @@ console.log('Loaded!');
 
 var message = document.getElementById("message");
 var button = document.getElementById("button1");
-button.onClick = changeText();
+
 
 function changeText () {
     message.innerHTML = "Hi I am Ritesh";
