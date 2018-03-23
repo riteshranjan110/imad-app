@@ -4,7 +4,20 @@ var button = document.getElementById('button1');
 
 button.onclick = function () {
    
-    var message = document.getElementById('message');
-    message.innerHTML = 'success';
+   //create a xmlhttp object
+   var request = new XMLHttpRequest();
+   //handle the request
+   request.onreadystatechange = function () {
+       if(this.readystate == 4 && this.status == 200){
+           counter = request.responseText;
+           //render the html element
+           var span = document.getElementById('count');
+           count.innerHTML = counter.toString();
+       }
+   };
+   
+   //send the request
+   request.open('GET','riteshk981.imad.hasura-app.io/counter',true);
+   request.send(null);
 };
 
