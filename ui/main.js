@@ -6,7 +6,7 @@ message.innerHTML = "ritesh";
 var img = document.getElementById('madi');
 var marginLeft;
 function moveRight () {
-    marginLeft +=10;
+    marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + 'px';
 }
 
