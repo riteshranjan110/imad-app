@@ -1,7 +1,10 @@
 console.log('Loaded!');
 
 var message = document.getElementById("message");
-message.innerHTML = "ritesh";
+var button = document.getElementById("button1");
+button.onClick = function () {
+    message.innerHTML = "Hi I am Ritesh";
+};
 
 var img = document.getElementById('madi');
 var marginLeft = 0;
