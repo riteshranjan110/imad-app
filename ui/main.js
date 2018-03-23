@@ -1,14 +1,5 @@
 console.log('Loaded!');
 
-var message = document.getElementById("message");
-var button = document.getElementById("change-text");
-button.innerHTML = 'success';
-
-button.onClick = function () {
-     button.innerHTML = 'Executed Successfully';
-};
-
-
 var img = document.getElementById('madi');
 var marginLeft = 0;
 var moveRight =  function () {
