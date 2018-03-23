@@ -19,7 +19,7 @@ button.onclick = function () {
    };
    
    //send the request
-   request.open('GET','https://riteshk981.imad.hasura-app.io/counter',true);
+   request.open('GET','riteshk981.imad.hasura-app.io/counter',true);
    request.send(null);
 };
 
