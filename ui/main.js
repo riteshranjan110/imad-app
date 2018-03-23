@@ -3,6 +3,7 @@ console.log('Loaded!');
 var message = document.getElementById("message");
 message.innerHTML = "ritesh";
 
+var img = document.getElementById('madi');
 var marginLeft;
 var moveRight = function () {
     marginLeft +=10;
