@@ -12,11 +12,10 @@ img.onclick = function () {
     var interval = setInterval(moveRight,100);
 };
 
-var message = document.getElementById("message");
-message.onClick = function () {
-    changeText();
+
+var button = document.getElementById("click-me");
+button.onClick = function () {
+    var message = document.getElenmentById("message");
+    message.innerHTML ="success"; 
 };
 
-function changeText () {
-    document.getElementById("message").innerHTML = "you clicked me";
-}
