@@ -8,7 +8,7 @@ button.onclick = function () {
    var request = new XMLHttpRequest();
    //handle the request
    request.onreadystatechange = function () {
-       if(this.readyState == 4 && this.status == 200){
+       if(request.readyState == XMLHttpRequest.DONE && request.status == 200){
            var counter = request.responseText;
            //render the html element
            var span = document.getElementById('count');
