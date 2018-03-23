@@ -12,7 +12,7 @@ button.onclick = function () {
            counter = request.responseText;
            //render the html element
            var span = document.getElementById('count');
-           count.innerHTML = counter.toString();
+           span.innerHTML = counter.toString();
        }
    };
    
