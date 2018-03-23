@@ -8,11 +8,16 @@
             <img id="madi" src="/ui/madi.png"   class="img-medium"/>
         </div>
         <br>
-        <button id="change-text">Click Me</button>
+        
         <div  class="center text-big bold">
             <h1 id="message">Hi! I am your webapp.</h1>
         </div>
-        
+        <button onClick = "myFunction()">Click Me</button>
+        <script>
+            function myFunction () {
+                document.getElementById("message") = "Hello Ritesh";
+            }
+        </script>
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
