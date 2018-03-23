@@ -90,6 +90,13 @@ return htmlTemplate;
 }
 
 
+var counter = 0;
+app.get('/counter',function(req,res){
+    counter = counter+1;
+    res.send(counter.toString());
+});
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -105,11 +112,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-var counter = 0;
-app.get('/counter',function(req,res){
-    counter = counter+1;
-    res.send(counter.toString());
-});
+
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
