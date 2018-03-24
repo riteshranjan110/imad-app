@@ -24,8 +24,7 @@ button.onclick = function () {
 };
 
 
-var inputName = document.getElementById('input-name');
-var name = inputName.value;
+
 var submit = document.getElementById('submit');
 submit.onclick = function () {
      //create a xmlhttp object
@@ -47,6 +46,9 @@ submit.onclick = function () {
             }
         }
    };
+   
+   var inputName = document.getElementById('input-name');
+    var name = inputName.value;
    
    //send the request
    request.open('GET','http://riteshk981.imad.hasura-app.io/submit-name?name='+name ,true);
