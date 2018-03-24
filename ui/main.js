@@ -23,9 +23,10 @@ button.onclick = function () {
    request.send(null);
 };
 
-var submit = document.getElementById('submit');
-var inputName = documnet.getElementById('input-name');
+
+var inputName = document.getElementById('input-name');
 var name = inputName.value;
+var submit = document.getElementById('submit');
 submit.onclick = function () {
     var names = ['name1','name2','name3','name4'];
     var list='';
