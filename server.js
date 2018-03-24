@@ -29,7 +29,7 @@ app.get('/submit-name/:name', function (req, res) {
     
     names.push(name);
     
-    res.send(JASON.stringify(names));
+    res.send(JSON.stringify(names));
     
 });
 
